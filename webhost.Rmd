@@ -3,7 +3,7 @@ title: "Applications of LANDFIRE in Vermont"
 output: 
   flexdashboard::flex_dashboard:
     storyboard: true
-    runtime: shiny
+  #  runtime: shiny
 ---
 
 Maps {.storyboard}
@@ -39,15 +39,15 @@ Some commentary about Frame 3.
 
 Graphs
 =========================================
-Inputs {.sidebar}
+#Inputs {.sidebar}
 -------------------------------------
 ```{r}
-library(readr)
-bps_sclass_practice <- read_csv("C:/Users/ematula/Desktop/Vermont/thingy/bps_sclass.csv")
-selectInput('xcol', 'X Variable', names(bps_sclass_practice))
+#library(readr)
+#bps_sclass_practice <- #read_csv("C:/Users/ematula/Desktop/Vermont/thingy/bps_sclass.csv")
+#selectInput('xcol', 'X Variable', names(bps_sclass_practice))
     
-selectInput('ycol', 'Y Variable', names(bps_sclass_practice),
-                selected=names(bps_sclass_practice)[[2]])
+#selectInput('ycol', 'Y Variable', names(bps_sclass_practice),
+#                selected=names(bps_sclass_practice)[[2]])
     
 
 ```
