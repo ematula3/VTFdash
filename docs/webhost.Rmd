@@ -2,44 +2,49 @@
 title: "Applications of LANDFIRE in Vermont"
 output: 
   flexdashboard::flex_dashboard:
-    storyboard: true
-  #  runtime: shiny
+    vertical_layout: scroll
+    theme: flatly
+    #standstone
+    #flatly
+    #readable
 ---
-
-Maps {.storyboard}
+Background
 =========================================
 
+Maps
+=========================================
+Row
+-------------------------------------
 ### Historical Biophysical Settings
-
-![Caption for the picture.](vermont_bps.jpg)
-
+```{r, echo=FALSE, out.width="100%"}
+knitr::include_graphics("vermont_bps.jpg")
+```
 *** 
-
-Some commentary about Frame 1.
 
 ### Existing Vegitation Type
-
-![Caption for the picture.](vermont_evt_group.jpg)
-
-```{r}
+```{r, echo=FALSE, out.width="100%"}
+knitr::include_graphics("vermont_evt_group.jpg")
 ```
 *** 
-
-Some commentary about Frame 2.
 
 ### Estimating Old Growth
-
-![Caption for the picture.](potential_nh.jpg)
-
-```{r}
+```{r, echo=FALSE, out.width="100%"}
+knitr::include_graphics("potential_nh.jpg")
 ```
 *** 
 
-Some commentary about Frame 3.
+Row
+-------------------------------------
+### Commentary 1
+
+### Commentary 2
+
+### Commentary 3
+
 
 Graphs
 =========================================
-#Inputs {.sidebar}
+
 -------------------------------------
 ```{r}
 #library(readr)
