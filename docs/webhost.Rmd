@@ -7,60 +7,72 @@ output:
     #standstone
     #flatly
     #readable
+self_contained: true
 ---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+```
+
+
+
 Background
 =========================================
-Row
--------------------------------------
+
+## Kowalski Analysis
+
 ```{r, echo=FALSE, out.width="100%"}
 knitr::include_graphics("outcrop.jpg")
 ```
 
-Row
--------------------------------------
+
 ```{r, echo=FALSE, out.width="100%"}
 knitr::include_graphics("hardwood.jpg")
 ```
 
-Row
--------------------------------------
+
 ```{r, echo=FALSE, out.width="100%"}
 knitr::include_graphics("hardwood2.jpg")
 ```
 
-Maps
+Column {.sidebar}
+-----------------------------------------------------------------------
+<b><font  size="4em" color="#000000">What is LANDFIRE?</font></b>  
+
+The FitnessGram™ Pacer Test is a multistage aerobic capacity test that progressively gets more difficult as it continues. The 20 meter pacer test will begin in 30 seconds. Line up at the start. The running speed starts slowly, but gets faster each minute after you hear this signal. [beep] A single lap should be completed each time you hear this sound. [ding] Remember to run in a straight line, and run as long as possible. The second time you fail to complete a lap before the sound, your test is over. The test will begin on the word start. On your mark, get ready, start.
+
+**The goals of this thing are:**
+
+
+Past
 =========================================
-Row
--------------------------------------
-### Historical Biophysical Settings
+
+## Kowalski Analysis
+
 ```{r, echo=FALSE, out.width="100%"}
 knitr::include_graphics("vermont_bps.jpg")
 ```
-*** 
+ 
 
-### Existing Vegitation Type
+
+Column {.sidebar}
+-----------------------------------------------------------------------
+<b><font  size="4em" color="#000000">Precolonialization</font></b>  
+
+The FitnessGram™ Pacer Test is a multistage aerobic capacity test that progressively gets more difficult as it continues. The 20 meter pacer test will begin in 30 seconds. Line up at the start. The running speed starts slowly, but gets faster each minute after you hear this signal. [beep] A single lap should be completed each time you hear this sound. [ding] Remember to run in a straight line, and run as long as possible. The second time you fail to complete a lap before the sound, your test is over. The test will begin on the word start. On your mark, get ready, start.
+
+**The goals of this thing are:**
+
+
+Present
+=========================================
+
+## Kowalski Analysis
+
 ```{r, echo=FALSE, out.width="100%"}
 knitr::include_graphics("vermont_evt_group.jpg")
 ```
-*** 
-
-### Estimating Old Growth
-```{r, echo=FALSE, out.width="100%"}
-knitr::include_graphics("potential_nh.jpg")
-```
-*** 
-
-Row
--------------------------------------
-### Commentary 1
-
-### Commentary 2
-
-### Commentary 3
-
-
-Graphs
-=========================================
+ 
 
 -------------------------------------
 ```{r}
@@ -74,13 +86,9 @@ Graphs
 
 ```
 
-Column
------------------------------------------
----
     
-### Chart 1
     
-```{r}
+```{r, echo=FALSE, out.width="100%"}
 library(readr)
 bps_sclass_practice <- read_csv("C:/Users/ematula/Desktop/Vermont/VTFdash/docs/bps_sclass.csv")
 pacman::p_load(tidyverse, ggsci, ggtext, readr, dplyr, DT, crosstalk, plotly)
@@ -134,9 +142,8 @@ ggplot(bps_sclass_practice, aes(fill=factor(refCur), y=Percent, x=Sclass)) +
 
 ```
 
-### Chart 2
 
-```{r}
+```{r, echo=FALSE, out.width="100%"}
 nhheat <- read_csv("nh_heat.csv")
 
 ggplot(nhheat,aes(x=evc, y=evh, fill = percent)) +
@@ -152,3 +159,29 @@ ggplot(nhheat,aes(x=evc, y=evh, fill = percent)) +
   theme_bw(base_size=14)+
  split(nhheat, cut(nhheat$evc, 2))
 ```
+
+Column {.sidebar}
+-----------------------------------------------------------------------
+<b><font  size="4em" color="#000000">Current</font></b>  
+
+The FitnessGram™ Pacer Test is a multistage aerobic capacity test that progressively gets more difficult as it continues. The 20 meter pacer test will begin in 30 seconds. Line up at the start. The running speed starts slowly, but gets faster each minute after you hear this signal. [beep] A single lap should be completed each time you hear this sound. [ding] Remember to run in a straight line, and run as long as possible. The second time you fail to complete a lap before the sound, your test is over. The test will begin on the word start. On your mark, get ready, start.
+
+**The goals of this thing are:**
+
+Extrapolation
+=========================================
+## Kowalski Analysis
+
+
+```{r, echo=FALSE, out.width="100%"}
+knitr::include_graphics("potential_nh.jpg")
+```
+ 
+
+Column {.sidebar}
+-----------------------------------------------------------------------
+<b><font  size="4em" color="#000000">"Old Growth"</font></b>  
+
+The FitnessGram™ Pacer Test is a multistage aerobic capacity test that progressively gets more difficult as it continues. The 20 meter pacer test will begin in 30 seconds. Line up at the start. The running speed starts slowly, but gets faster each minute after you hear this signal. [beep] A single lap should be completed each time you hear this sound. [ding] Remember to run in a straight line, and run as long as possible. The second time you fail to complete a lap before the sound, your test is over. The test will begin on the word start. On your mark, get ready, start.
+
+**The goals of this thing are:**
