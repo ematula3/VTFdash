@@ -39,9 +39,13 @@ Column {.sidebar}
 -----------------------------------------------------------------------
 <b><font  size="4em" color="#000000">What is LANDFIRE?</font></b>  
 
-The FitnessGram™ Pacer Test is a multistage aerobic capacity test that progressively gets more difficult as it continues. The 20 meter pacer test will begin in 30 seconds. Line up at the start. The running speed starts slowly, but gets faster each minute after you hear this signal. [beep] A single lap should be completed each time you hear this sound. [ding] Remember to run in a straight line, and run as long as possible. The second time you fail to complete a lap before the sound, your test is over. The test will begin on the word start. On your mark, get ready, start.
+Conservation challenges transcend political boundaries, and/or require many datasets which makes conservation planning a challenge.  Many freely available vegetation datasets are state-based, only cover one attribute of vegetation (e.g., type but not height) or are incompatible.  In the United States the [LANDFIRE program](https://landfire.gov/) delivers over two dozen datasets that characterize vegetation, fire and fuel characteristics for all lands.  
 
-**The goals of this thing are:**
+**Using LANDFIRE data we:**
+
+* made maps of Vermont's ecosystems past and present
+* identified potential areas of old-growth northern hardwoods
+* explored utility, and challenges of using LANDFIRE data
 
 
 Past
