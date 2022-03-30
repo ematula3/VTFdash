@@ -84,7 +84,7 @@ Present
 
 ## Kowalski Analysis
 
-```{r, echo=FALSE, out.width="80%"}
+```{r, echo=FALSE, out.width="80%", fig.align='center'}
 knitr::include_graphics("vermont_evt_group.jpg")
 ```
  
@@ -95,7 +95,7 @@ knitr::include_graphics("vermont_evt_group.jpg")
 
 <br>
  
-```{r nhscls, echo=FALSE, message=FALSE, warning=FALSE, out.width="70%"}
+```{r nhscls, echo=FALSE, message=FALSE, warning=FALSE, out.width="70%", fig.align='center'}
 
 # need to make longer
 bps_sclass_practice <- bps_sclass_practice %>%
@@ -149,7 +149,7 @@ ggplot(bps_sclass_practice, aes(fill=factor(refCur), y=Percent, x=Sclass)) +
 
 <br>
 
-```{r, echo=FALSE, out.width="70%"}
+```{r, echo=FALSE, out.width="70%", fig.align='center'}
 
 
 ggplot(nhheat,aes(x=evc, y=evh, fill = percent)) +
@@ -215,7 +215,7 @@ The term "old growth" at times can be politically charged and desputed on with d
 
 
 
-More methods, and authors
+More Methods & Authors
 =========================================
 
 ## Kowalski Analysis
@@ -242,9 +242,9 @@ Code and input data available upon request.
 
 **Authors**
 
-Erin Matula: is graduating from [Northern Michigan University](https://nmu.edu/) with a bachelors degree in Environmental Science spring 2022 and will be going on to Trent University to study impacts of prescribed fire on boreal wetlands.  Erin was responsible for conceptualizing and implementing the dashboard, GIS analysis, data wrangling, chart making and writing. She completed this work as part of an internship with [The Nature Conservancy](https://www.nature.org/en-us/) and the [Conservation Data Lab](https://conservationdatalab.org/).
+Erin Matula: is graduating from [Northern Michigan University](https://nmu.edu/) with a bachelors degree in Environmental Science spring 2022 and will be going on to Trent University to study impacts of prescribed fire on boreal systems.  Erin was responsible for conceptualizing and implementing the dashboard, GIS analysis, data wrangling, chart making and writing. She completed this work as part of an internship with [The Nature Conservancy](https://www.nature.org/en-us/) and the [Conservation Data Lab](https://conservationdatalab.org/).
 
-```{r, echo=FALSE, out.width="30%"}
+```{r, echo=FALSE, out.width="30%", out.extra=}
 knitr::include_graphics("erin.jpg")
 ```
 
@@ -265,7 +265,7 @@ knitr::include_graphics("matt.jpg")
 
 
 **Acknowledgements**
-We would like to thank the [Vermont Chapter of The Nature Conservancy](https://www.nature.org/en-us/about-us/where-we-work/united-states/vermont/) for the inspiration, and Erin's mom for constant support. 
+We would like to thank the [Vermont Chapter of The Nature Conservancy](https://www.nature.org/en-us/about-us/where-we-work/united-states/vermont/) for the inspiration, and Colleen Matula (Erin's mom) for constant support. 
 
 
 
