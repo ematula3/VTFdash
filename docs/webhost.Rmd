@@ -47,7 +47,7 @@ knitr::include_graphics("outcrop.jpg")
 
 Column {.sidebar}
 -----------------------------------------------------------------------
-<b><font  size="4em" color="#000000">What is LANDFIRE?</font></b>  
+<b><font  size="4em" color="#000000">What is LANDFIRE? And what did we do? </font></b>  
 
 Conservation challenges transcend political boundaries, and/or require many datasets which makes conservation planning a challenge.  Many freely available vegetation datasets are state-based, only cover one attribute of vegetation (e.g., type but not height) or are incompatible.  In the United States the [LANDFIRE program](https://landfire.gov/) delivers over two dozen datasets that characterize vegetation, fire and fuel characteristics for all lands.  
 
@@ -84,12 +84,18 @@ Present
 
 ## Kowalski Analysis
 
-```{r, echo=FALSE, out.width="100%"}
+```{r, echo=FALSE, out.width="80%"}
 knitr::include_graphics("vermont_evt_group.jpg")
 ```
  
  
-```{r, echo=FALSE, out.width="100%"}
+<br>
+
+***
+
+<br>
+ 
+```{r nhscls, echo=FALSE, message=FALSE, warning=FALSE, out.width="70%"}
 
 # need to make longer
 bps_sclass_practice <- bps_sclass_practice %>%
@@ -137,7 +143,13 @@ ggplot(bps_sclass_practice, aes(fill=factor(refCur), y=Percent, x=Sclass)) +
 ```
 
 
-```{r, echo=FALSE, out.width="100%"}
+<br>
+
+***
+
+<br>
+
+```{r, echo=FALSE, out.width="70%"}
 
 
 ggplot(nhheat,aes(x=evc, y=evh, fill = percent)) +
@@ -200,3 +212,63 @@ Column {.sidebar}
 <b><font  size="4em" color="#000000">"Old Growth"</font></b>  
 
 The term "old growth" at times can be politically charged and desputed on with different classifications in different organizations. For the purposes of this presentation, I refer to the late development succession class of northern hardwood as old growth. In this map I took a stab at mapping potential (future) old growth forests by applying a simple ruleset. I basically mapped pixels that have northern hardwoods forests plus 70% or greater forest cover AND 20m or greater height. While old growth does not occur exclusively by these rules, it will more than likely present ideal conditions for potential old growth areas. Extrapolation such as this paired with anecdotal evidence and/or more indepth lidar presents the opportunity to spatially focus on older versus younger forests. 
+
+
+
+More methods, and authors
+=========================================
+
+## Kowalski Analysis
+
+<br>
+
+**Geographical Analysis**
+
+All processing of LANDFIRE spatial data was conducted in ArcGIS Pro (Version 2.5, https://www.esri.com/en-us/arcgis/products/arcgis-pro/overview) and included:
+
+* Exporting the Vermont state border from United States Cartographic Boundary file (20m, obtatined from http://www2.census.gov/geo/tiger/GENZ2014/shp/cb_2014_us_state_20m.zip)
+* Clipping of all LANDFIRE datasets by the Vermont state border using the Clip Raster tool in the Data Management toolbox.
+* Combining of the Biophysical Settings and Succession class datasets using the Combine tool in the Spatial Analyst toolbox.
+* Map making, described in sidebars. 
+* Attribute tables were exported as .csv files for wrangling and chart making
+
+**Data wrangling and charts**
+
+Data wrangling and charts were made with R (R Core Team, 2021, https://www.r-project.org/) within the R-Studio Integrated Design Environment (R Studio Team, 2021, http://www.rstudio.com/).
+
+Code and input data available upon request.
+
+<br>
+
+**Authors**
+
+Erin Matula: is graduating from [Northern Michigan University](https://nmu.edu/) with a bachelors degree in Environmental Science spring 2022 and will be going on to Trent University to study impacts of prescribed fire on boreal wetlands.  Erin was responsible for conceptualizing and implementing the dashboard, GIS analysis, data wrangling, chart making and writing. She completed this work as part of an internship with [The Nature Conservancy](https://www.nature.org/en-us/) and the [Conservation Data Lab](https://conservationdatalab.org/).
+
+```{r, echo=FALSE, out.width="30%"}
+knitr::include_graphics("erin.jpg")
+```
+
+<br>
+
+Randy Swaty: is an ecologist with The Nature Conservancy's LANDFIRE team and cheerleader-in-cheif of the Conservation Data Lab.  Contributed GIS guidance, some R code and writing.
+```{r, echo=FALSE, out.width="30%"}
+knitr::include_graphics("randy.jpg")
+```
+
+<br>
+
+Matt Van Grinsven: is an Associate Professor at Northern Michigan University.  Matt studies water quality and quantity, aquatic ecology, forest resources and more in the Great Lakes and Colorado Plateau regions.  Matt served as faculty advisor and mentor for Erin.
+
+```{r, echo=FALSE, out.width="30%"}
+knitr::include_graphics("matt.jpg")
+```
+
+
+**Acknowledgements**
+We would like to thank the [Vermont Chapter of The Nature Conservancy](https://www.nature.org/en-us/about-us/where-we-work/united-states/vermont/) for the inspiration, and Erin's mom for constant support. 
+
+
+
+
+
+
