@@ -28,8 +28,9 @@ Background
 
 ## Kowalski Analysis
 
+
 ```{r, echo=FALSE, out.width="100%"}
-knitr::include_graphics("outcrop.jpg")
+knitr::include_graphics("hardwood2.jpg")
 ```
 
 
@@ -39,8 +40,10 @@ knitr::include_graphics("hardwood.jpg")
 
 
 ```{r, echo=FALSE, out.width="100%"}
-knitr::include_graphics("hardwood2.jpg")
+knitr::include_graphics("outcrop.jpg")
 ```
+
+
 
 Column {.sidebar}
 -----------------------------------------------------------------------
@@ -70,9 +73,10 @@ Column {.sidebar}
 -----------------------------------------------------------------------
 <b><font  size="4em" color="#000000">Precolonialization</font></b>  
 
-The FitnessGram™ Pacer Test is a multistage aerobic capacity test that progressively gets more difficult as it continues. The 20 meter pacer test will begin in 30 seconds. Line up at the start. The running speed starts slowly, but gets faster each minute after you hear this signal. [beep] A single lap should be completed each time you hear this sound. [ding] Remember to run in a straight line, and run as long as possible. The second time you fail to complete a lap before the sound, your test is over. The test will begin on the word start. On your mark, get ready, start.
+This map depicts the Biophysical Setting (BpS) Name, that is ungrouped BpSs as delivered by LANDFIRE. These BpSs are the dominant ecosystems that would have been on the landscape just prior to European Settlement. Each BpS has a description, models of how disturbances and succession classes interact and spatial data. The spatial data is delivered as a raster with 30M x 30M pixels. There are roughly 900 BpSs in the lower 48. This BpS dataset was created by mapping dozens of abiotic factors then using regression models to label the pixels.
 
-**The goals of this thing are:**
+Symbolizing by BpS Name allows for a finer resolution than Group Vegetation with 27 values instead of 8 respectively. No changes were made to the color ramp so it is slightly hectic on its own. Going forward with this project and with other state or county wide midsize LANDFIRE projects I plan to adjust the color ramp, remove some of the lesser mapped types, and make a few adjustments for easier viewing. 
+
 
 
 Present
@@ -84,27 +88,7 @@ Present
 knitr::include_graphics("vermont_evt_group.jpg")
 ```
  
-
-Column {.sidebar}
------------------------------------------------------------------------
-<b><font  size="4em" color="#000000">Current</font></b>  
-
-The FitnessGram™ Pacer Test is a multistage aerobic capacity test that progressively gets more difficult as it continues. The 20 meter pacer test will begin in 30 seconds. Line up at the start. The running speed starts slowly, but gets faster each minute after you hear this signal. [beep] A single lap should be completed each time you hear this sound. [ding] Remember to run in a straight line, and run as long as possible. The second time you fail to complete a lap before the sound, your test is over. The test will begin on the word start. On your mark, get ready, start.
-
-**The goals of this thing are:**
-```{r}
-#library(readr)
-#bps_sclass_practice <- #read_csv("C:/Users/ematula/Desktop/Vermont/thingy/bps_sclass.csv")
-#selectInput('xcol', 'X Variable', names(bps_sclass_practice))
-    
-#selectInput('ycol', 'Y Variable', names(bps_sclass_practice),
-#                selected=names(bps_sclass_practice)[[2]])
-    
-
-```
-
-    
-    
+ 
 ```{r, echo=FALSE, out.width="100%"}
 
 # need to make longer
@@ -171,6 +155,35 @@ ggplot(nhheat,aes(x=evc, y=evh, fill = percent)) +
 ```
 
 
+Column {.sidebar}
+-----------------------------------------------------------------------
+<b><font  size="4em" color="#000000">Current</font></b>  
+
+**EVT Map**
+
+LANDFIRE delivers many datasets that help land managers understand today’s landscape. Most recent data represents conditions as of 2016, in 2022 data representing 2019 will be delivered and refreshed every two years. These current data sets are used in management planning, research, and forest certification. 
+
+Here I've mapped the Existing Vegetation Type (EVT) Group Name, a mid-level of coarseness within the EVT data set. Coarser symbology can be viewed under the EVT Group value field and finer through EVT Name. I adjusted the colors and consolidated lesser mapped group names for easier viewing. 
+
+So, we can visualize past data and present data. Next, let's bridge the gap between the two with some graphs.
+
+
+**Vegetation Departure Graph**
+
+I wondered how the historical amounts of succession classes compared to current amounts of succession classes for the northern hardwoods specifically. To visualize this, I combined the modeled succession class amounts from the BpS description and the current amounts of the succession classes from the current LANDFIRE Succession Class data and graphed them side by side in R. UN stands for uncharacteristic native which represents pixels that don't accurately represent the class like where there were trees over 10M and canopy cover less than 60%. In the Great Lakes this often represents heavy logging and/or beech bark disease. UE stands for uncharacterisic exotic like the presence of Japanese Knotweed.
+
+Notice there was no Late Development northern hardwood mapped in 2016 despite it being the predominant class precolonization. We can also learn from this graph that there was a major over-representation of the Mid-Development 2 succession class, which has sugar maples, yellow birch and other northern hardwood species.
+
+
+**Heat Chart**
+
+The next heat chart depicts the height/cover combinations for the northern hardwoods in Vermont. Darker cells indicate more of the northern hardwoods in that combination. It is important to note the Canopy Cover axis that starts at 50% for better viewing purposes. This graph was made with a combined data set simliar to the prior graph methods.
+
+From the last graph, it is evident that the mid-development class was a strength, but this heat chart depicts the distribution in greater detail through the cells with greater saturation. The blank spot on the right side of the graph represents the missing late development class. Heat charts are yet another helpful tool for representing class height and cover distribution.
+    
+    
+
+
 
 Extrapolation
 =========================================
@@ -186,6 +199,4 @@ Column {.sidebar}
 -----------------------------------------------------------------------
 <b><font  size="4em" color="#000000">"Old Growth"</font></b>  
 
-The FitnessGram™ Pacer Test is a multistage aerobic capacity test that progressively gets more difficult as it continues. The 20 meter pacer test will begin in 30 seconds. Line up at the start. The running speed starts slowly, but gets faster each minute after you hear this signal. [beep] A single lap should be completed each time you hear this sound. [ding] Remember to run in a straight line, and run as long as possible. The second time you fail to complete a lap before the sound, your test is over. The test will begin on the word start. On your mark, get ready, start.
-
-**The goals of this thing are:**
+The term "old growth" at times can be politically charged and desputed on with different classifications in different organizations. For the purposes of this presentation, I refer to the late development succession class of northern hardwood as old growth. In this map I took a stab at mapping potential (future) old growth forests by applying a simple ruleset. I basically mapped pixels that have northern hardwoods forests plus 70% or greater forest cover AND 20m or greater height. While old growth does not occur exclusively by these rules, it will more than likely present ideal conditions for potential old growth areas. Extrapolation such as this paired with anecdotal evidence and/or more indepth lidar presents the opportunity to spatially focus on older versus younger forests. 
