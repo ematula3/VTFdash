@@ -49,13 +49,13 @@ Column {.sidebar}
 -----------------------------------------------------------------------
 <b><font  size="4em" color="#000000">What is LANDFIRE? And what did we do? </font></b>  
 
-Conservation challenges transcend political boundaries, and/or require many datasets which makes conservation planning a challenge.  Many freely available vegetation datasets are state-based, only cover one attribute of vegetation (e.g., type but not height) or are incompatible.  In the United States the [LANDFIRE program](https://landfire.gov/) delivers over two dozen datasets that characterize vegetation, fire and fuel characteristics for all lands.  
+Conservation issues often transcend political boundaries, and require many datasets making conservation planning a challenge. Many freely available datasets are state-based, only covering one attribute of vegetation (e.g., type but not height) or are incompatible. In the United States the [LANDFIRE program](https://landfire.gov/) delivers over two dozen datasets that characterize vegetation, fire and fuel characteristics for all lands.  
 
 **Using LANDFIRE data we:**
 
-* made maps of Vermont's ecosystems past and present
-* identified potential areas of old-growth northern hardwoods
-* explored utility, and challenges of using LANDFIRE data
+* Developed maps of Vermont's ecosystems past and present
+* Identified potential areas of old-growth northern hardwoods
+* Explored utility, and challenges of using LANDFIRE data
 
 
 Past
@@ -73,9 +73,9 @@ Column {.sidebar}
 -----------------------------------------------------------------------
 <b><font  size="4em" color="#000000">Precolonialization</font></b>  
 
-This map depicts the Biophysical Setting (BpS) Name, that is ungrouped BpSs as delivered by LANDFIRE. These BpSs are the dominant ecosystems that would have been on the landscape just prior to European Settlement. Each BpS has a description, models of how disturbances and succession classes interact and spatial data. The spatial data is delivered as a raster with 30M x 30M pixels. There are roughly 900 BpSs in the lower 48. This BpS dataset was created by mapping dozens of abiotic factors then using regression models to label the pixels.
+This map is symbolized by the field, the Biophysical Setting (BpS) Name. It is ungrouped BpSs as delivered by LANDFIRE, so I didn't consolidate similar groups or change colors. These BpSs are the dominant ecosystems that would have been on the landscape just prior to European Settlement. Each BpS has a description, models of how disturbances and succession classes interact and spatial data. The spatial data is delivered as a raster with 30M x 30M pixels. There are roughly 900 BpSs in the lower 48. This BpS dataset was created by mapping dozens of abiotic factors then using regression models to label the pixels.
 
-Symbolizing by BpS Name allows for a finer resolution than Group Vegetation with 27 values instead of 8 respectively. No changes were made to the color ramp so it is slightly hectic on its own. Going forward with this project and with other state or county wide midsize LANDFIRE projects I plan to adjust the color ramp, remove some of the lesser mapped types, and make a few adjustments for easier viewing. 
+Symbolizing by BpS Name allows for a finer resolution than Group Vegetation with 27 values instead of 8 respectively. No changes were made to the color ramp so it is slightly hectic on its own with so many different colors. Going forward with this project and with other state or county wide midsize LANDFIRE projects I plan to adjust the color ramp, remove some of the lesser mapped types, and make a few adjustments for easier viewing. 
 
 
 
@@ -173,23 +173,23 @@ Column {.sidebar}
 
 **EVT Map**
 
-LANDFIRE delivers many datasets that help land managers understand today’s landscape. Most recent data represents conditions as of 2016, in 2022 data representing 2019 will be delivered and refreshed every two years. These current data sets are used in management planning, research, and forest certification. 
+LANDFIRE delivers many datasets that help land managers understand today’s landscape. Most recent data represents conditions as of 2016. In 2022 data representing 2019 will be delivered and refreshed every two years. These current data sets are used in management planning, research, and forest certification. 
 
 Here I've mapped the Existing Vegetation Type (EVT) Group Name, a mid-level of coarseness within the EVT data set. Coarser symbology can be viewed under the EVT Group value field and finer through EVT Name. I adjusted the colors and consolidated lesser mapped group names for easier viewing. 
 
-So, we can visualize past data and present data. Next, let's bridge the gap between the two with some graphs.
+Here, we can visualize past data and present data. Next, let's bridge the gap between the two with some graphs.
 
 
 **Vegetation Departure Graph**
 
-I wondered how the historical amounts of succession classes compared to current amounts of succession classes for the northern hardwoods specifically. To visualize this, I combined the modeled succession class amounts from the BpS description and the current amounts of the succession classes from the current LANDFIRE Succession Class data and graphed them side by side in R. UN stands for uncharacteristic native which represents pixels that don't accurately represent the class like where there were trees over 10M and canopy cover less than 60%. In the Great Lakes this often represents heavy logging and/or beech bark disease. UE stands for uncharacterisic exotic like the presence of Japanese Knotweed.
+I wondered how the historical amounts of succession classes compared to current succession classes for northern hardwoods specifically. To visualize this, I combined the modeled succession class amounts from the BpS description and the current succession classes from the current LANDFIRE Succession Class data and graphed them side by side in R. UN stands for uncharacteristic native which represents pixels that don't accurately represent the succession class. This could be odd canopy cover and tree height combinations like trees over 10M and canopy cover less than 60%. In the Great Lakes region this often represents heavy logging and/or beech bark disease. UE stands for uncharacterisic exotic like the presence of Japanese Knotweed.
 
 Notice there was no Late Development northern hardwood mapped in 2016 despite it being the predominant class precolonization. We can also learn from this graph that there was a major over-representation of the Mid-Development 2 succession class, which has sugar maples, yellow birch and other northern hardwood species.
 
 
 **Heat Chart**
 
-The next heat chart depicts the height/cover combinations for the northern hardwoods in Vermont. Darker cells indicate more of the northern hardwoods in that combination. It is important to note the Canopy Cover axis that starts at 50% for better viewing purposes. This graph was made with a combined data set simliar to the prior graph methods.
+The next heat chart depicts the height/cover combinations for the northern hardwoods in Vermont. Darker cells indicate more northern hardwoods in that combination. It is important to note the Canopy Cover axis that starts at 50% for better viewing purposes. This graph was made with a combined data set simliar to the prior graph methods.
 
 From the last graph, it is evident that the mid-development class was a strength, but this heat chart depicts the distribution in greater detail through the cells with greater saturation. The blank spot on the right side of the graph represents the missing late development class. Heat charts are yet another helpful tool for representing class height and cover distribution.
     
@@ -211,7 +211,7 @@ Column {.sidebar}
 -----------------------------------------------------------------------
 <b><font  size="4em" color="#000000">"Old Growth"</font></b>  
 
-The term "old growth" at times can be politically charged and desputed on with different classifications in different organizations. For the purposes of this presentation, I refer to the late development succession class of northern hardwood as old growth. In this map I took a stab at mapping potential (future) old growth forests by applying a simple ruleset. I basically mapped pixels that have northern hardwoods forests plus 70% or greater forest cover AND 20m or greater height. While old growth does not occur exclusively by these rules, it will more than likely present ideal conditions for potential old growth areas. Extrapolation such as this paired with anecdotal evidence and/or more indepth lidar presents the opportunity to spatially focus on older versus younger forests. 
+The term "old growth" at times can be politically charged and disputed with different classifications in different organizations. For the purposes of this presentation, I refer to the late development succession class of northern hardwood as old growth. In this map I took a stab at mapping potential (future) old growth forests by applying a simple ruleset. I basically mapped pixels that have northern hardwoods forests plus 70% or greater forest cover AND 20m or greater height. While old growth does not occur exclusively by these rules, it will more than likely present ideal conditions for potential old growth areas. Extrapolation on forest age such as this paired with anecdotal evidence and/or more indepth lidar presents the opportunity to spatially focus on older versus younger forests. 
 
 
 
@@ -242,9 +242,9 @@ Code and input data available upon request.
 
 **Authors**
 
-Erin Matula: is graduating from [Northern Michigan University](https://nmu.edu/) with a bachelors degree in Environmental Science spring 2022 and will be going on to Trent University to study impacts of prescribed fire on boreal systems.  Erin was responsible for conceptualizing and implementing the dashboard, GIS analysis, data wrangling, chart making and writing. She completed this work as part of an internship with [The Nature Conservancy](https://www.nature.org/en-us/) and the [Conservation Data Lab](https://conservationdatalab.org/).
+Erin Matula: is graduating from [Northern Michigan University](https://nmu.edu/) in the spring of 2022 with a bachelors degree in Environmental Science. She will be attending graduate school at Trent University to study impacts of prescribed fire on boreal systems.  Erin was responsible for conceptualizing and implementing the dashboard, GIS analysis, data wrangling, chart making and writing. She completed this work as part of an internship with [The Nature Conservancy](https://www.nature.org/en-us/) and the [Conservation Data Lab](https://conservationdatalab.org/).
 
-```{r, echo=FALSE, out.width="30%", out.extra=}
+```{r, echo=FALSE, out.width="30%"}
 knitr::include_graphics("erin.jpg")
 ```
 
@@ -265,10 +265,4 @@ knitr::include_graphics("matt.jpg")
 
 
 **Acknowledgements**
-We would like to thank the [Vermont Chapter of The Nature Conservancy](https://www.nature.org/en-us/about-us/where-we-work/united-states/vermont/) for the inspiration, and Colleen Matula (Erin's mom) for constant support. 
-
-
-
-
-
-
+We would like to thank the [Vermont Chapter of The Nature Conservancy](https://www.nature.org/en-us/about-us/where-we-work/united-states/vermont/) for the inspiration, and [Colleen Matula](https://issuu.com/wisconsinnaturalresources/docs/wnr_spring_2022_final_spreads/s/15109693) (Erin's mom) for constant support. 
